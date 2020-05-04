@@ -1,0 +1,37 @@
+﻿using System;
+using Magicalizer.Domain.Models.Abstractions;
+
+namespace App.Domain.Models
+{
+  public class Product : IModel<Data.Entities.Product, Filters.ProductFilter>
+  {
+    public int Id { get; set; }
+    public Category Category { get; set; }
+    public string Name { get; set; }
+    public decimal Price { get; set; }
+    public DateTime Created { get; set; }
+
+    public Product() { }
+
+    public Product(Data.Entities.Product _product)
+    {
+      this.Id = _product.Id;
+      this.Category = _product.Category == null ? null : new Category(_product.Category);
+      this.Name = _product.Name;
+      this.Price = _product.Price;
+      this.Created = _product.Created;
+    }
+
+    public Data.Entities.Product ToEntity()
+    {
+      return new Data.Entities.Product()
+      {
+        Id = this.Id,
+        CategoryId = this.Category == null ? 0 : this.Category.Id,
+        Name = this.Name,
+        Price = this.Price,
+        Created = this.Created == DateTime.MinValue ? DateTime.Now : this.Created
+      };
+    }
+  }
+}
