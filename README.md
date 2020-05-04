@@ -58,10 +58,6 @@ PATCH: /v1/categories/1
 
 DELETE: /v1/categories/1
 
-### Samples
-
-* [Sample Magicalizer-based web application](https://github.com/Magicalizer/Magicalizer-Sample);
-
 ## Links
 
 Sources on GitHub: https://github.com/Magicalizer/Magicalizer
