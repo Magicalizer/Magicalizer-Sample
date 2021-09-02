@@ -1,4 +1,4 @@
-# Magicalizer 1.0.0-alpha1 Sample Web Application
+# Magicalizer 1.1.0 Sample Web Application
 
 ![Magicalizer logotype](https://magicalizer.net/magicalizer_github_icon.png)
 
