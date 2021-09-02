@@ -23,13 +23,21 @@ and create decoupled software.
 Run the web application and try the following requests (you can use a test database from the sample project).
 
 GET: /v1/categories
+
 GET: /v1/categories?name.contains=izza
+
 GET: /v1/categories/1
+
 GET: /v1/categories/5?fields=products
+
 GET: /v1/products
+
 GET: /v1/products?category.id=5&sorting=+name&offset=0&limit=5
+
 GET: /v1/products?category.id=5&sorting=-name&offset=0&limit=5
+
 GET: /v1/products?category.name.equals=Pizza&name.contains=ana&fields=category
+
 POST: /v1/categories
 
 ```
@@ -50,12 +58,10 @@ PATCH: /v1/categories/1
 
 DELETE: /v1/categories/1
 
-### Samples
-
-* [Sample Magicalizer-based web application](https://github.com/Magicalizer/Magicalizer-Sample);
-
 ## Links
 
 Sources on GitHub: https://github.com/Magicalizer/Magicalizer
 
 Author: http://sikorsky.pro/
+
+Patreon: https://www.patreon.com/dmitry_sikorsky (you can support this project)
