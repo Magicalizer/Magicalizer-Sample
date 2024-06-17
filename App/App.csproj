@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ExtCore.Data.EntityFramework.Sqlite" Version="7.0.0" />
-    <PackageReference Include="Magicalizer.Api" Version="2.0.0" />
-    <PackageReference Include="Magicalizer.Data.Repositories.EntityFramework" Version="2.0.0" />
-    <PackageReference Include="Magicalizer.Domain.Services.Defaults" Version="2.0.0" />
+    <PackageReference Include="ExtCore.Data.EntityFramework.Sqlite" Version="9.0.0" />
+    <PackageReference Include="Magicalizer.Api" Version="4.0.0" />
+    <PackageReference Include="Magicalizer.Data.Repositories.EntityFramework" Version="4.0.0" />
+    <PackageReference Include="Magicalizer.Domain.Services.Defaults" Version="4.0.0" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-# Magicalizer 2.0.0 Sample Web Application
+# Magicalizer 4.0.0 Sample Web Application
 
 ![Magicalizer logotype](https://magicalizer.net/magicalizer_github_icon.png)
 
