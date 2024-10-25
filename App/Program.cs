@@ -1,21 +1,28 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
+// Copyright © 2024 Dmitry Sikorsky. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
-namespace AspNetCoreAdvancedApi
+using App;
+using FluentValidation;
+using Magicalizer.Extensions;
+using Microsoft.EntityFrameworkCore;
+
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<DbContext, AppDbContext>(options => {
+  options.UseSqlite(builder.Configuration.GetConnectionString("Default"));
+});
+
+builder.Services.AddMagicalizer();
+//ValidatorOptions.Global.LanguageManager = new CustomLanguageManager();
+//ValidatorOptions.Global.LanguageManager.Enabled = false;
+ValidatorOptions.Global.PropertyNameResolver = (type, memberInfo, expression) =>
 {
-  public class Program
-  {
-    public static void Main(string[] args)
-    {
-      CreateHostBuilder(args).Build().Run();
-    }
+  if (memberInfo == null) return null;
 
-    public static IHostBuilder CreateHostBuilder(string[] args) =>
-      Host.CreateDefaultBuilder(args)
-        .ConfigureWebHostDefaults(webBuilder =>
-          {
-            webBuilder.UseStartup<Startup>();
-          }
-        );
-  }
-}
+  return memberInfo.Name.ToCamelCase();
+};
+
+WebApplication webApplication = builder.Build();
+
+webApplication.UseMagicalizer();
+webApplication.Run();
